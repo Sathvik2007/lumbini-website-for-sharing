@@ -1,0 +1,297 @@
+.about-container {
+  padding: 4rem 2rem;
+  color: white;
+  background: transparent;
+}
+
+.about-intro {
+  text-align: center;
+  margin-bottom: 5rem;
+  margin-top: 8rem;
+}
+
+.about-intro h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.about-intro p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.managing-director {
+  text-align: center;
+  margin-bottom: 20rem;
+}
+
+.director-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.director-card img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid white;
+  margin-top: 3rem;
+  margin-bottom: -1rem;
+}
+
+.director-info h3 {
+  margin: 1rem 0;
+  font-size: 1.3rem;
+}
+
+.director-info p {
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.our-members {
+  margin-top: -200px;
+  text-align: center;
+}
+
+.our-members h2 {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  color: #ffffff;
+}
+
+.member-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 39px;
+  margin-bottom: 300px;
+}
+
+.member-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  width: 320px;
+  height: 270px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.member-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.member-card img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 2rem;
+}
+
+.member-card h4 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.member-card p {
+  color: #ffffff;
+  font-size: 0.95rem;
+}
+
+.mission-statement {
+  margin-top: -17rem;
+  font-size: 1.1rem;
+  text-align: center;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+.testimonials {
+  text-align: center;
+  margin-top: 7rem;
+  font-size: 1rem;
+}
+
+.testimonial-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.testimonial {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 1rem;
+  backdrop-filter: blur(8px);
+  font-size: medium;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.testimonial-logo {
+  width: 80px;
+  height: auto;
+  margin: 0 auto 1rem auto;
+  border-radius: 8px;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.testimonial-logo:hover {
+  transform: scale(1.05);
+}
+
+.testimonial p {
+  font-style: italic;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.testimonial h4 {
+  text-align: right;
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin-top: 2rem;
+  font-weight: bolder;
+}
+
+/* ------------------ MOBILE VIEW ------------------ */
+@media (max-width: 768px) {
+  .about-container {
+    padding: 2rem 1rem;
+  }
+
+  .about-intro {
+    margin-top: 7rem;
+  }
+
+  .about-intro h1 {
+    font-size: 1.2rem;
+  }
+
+  .about-intro p,
+  .director-info p,
+  .mission-statement {
+    font-size: 0.9rem;
+    padding: 0 0.8rem;
+  }
+
+  .managing-director {
+    font-size: 100%;
+    padding: 0 1rem;
+    margin-top: -2rem;
+    margin-bottom: 4rem;
+  }
+
+  .director-card img {
+    margin-top: 1.5rem;
+    width: 90px;
+    height: 90px;
+  }
+  
+  .director-info h3 {
+    margin: 0.7rem 0;
+    font-size: 1rem;
+  }
+  
+  .our-members {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .member-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 5rem;
+    padding: 0 1rem;
+  }
+
+  .member-card {
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+  }
+
+  .member-card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+  }
+
+  .member-card h4 {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .member-card p {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .mission-statement {
+    margin-top:  -3.4rem;
+    font-size: 0.9rem;
+    margin-bottom: -2rem;
+  }
+
+  .testimonial-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 0 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .testimonial {
+    margin-top: 0rem;
+    font-size: 0.8rem;
+    padding: 1rem;
+  }
+
+  .testimonial-logo {
+    width: 60px;
+  }
+
+  .testimonial h4 {
+    font-size: 0.9rem;
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .member-card h4 {
+    font-size: 0.7rem;
+    margin-bottom: 0.5rem;
+  }
+  .member-card p {
+    font-size: 0.6rem;
+    margin-bottom: 1rem;
+  }
+  .testimonial p {
+    font-size: 0.6rem;
+  }
+  .testimonial h4 {
+    font-size: 0.6rem;
+    margin-top: 1rem;
+  }
+}

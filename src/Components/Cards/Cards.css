@@ -1,0 +1,142 @@
+/* Desktop and Base Styles */
+.cards-section {
+  padding: 0 2rem 4rem;
+  background-color: transparent; /* Assuming background is handled by a parent or other section */
+  color: white; /* Text color for the section */
+  text-align: center;
+  /* This margin-top is highly dependent on your overall page layout.
+     Adjust or remove it if it causes layout issues. */
+  margin-top: -33rem;
+}
+
+.cards-heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: white; /* Ensure heading is white as per section color */
+}
+
+.cards-container {
+  display: grid;
+  /* For desktop: flexible grid that fits as many 250px wide columns as possible */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem; /* Space between cards */
+  max-width: 2000px; /* Max width of the grid container */
+  margin: 0 auto; /* Center the grid container */
+  min-height: 100px; /* Ensures container has some height even if empty */
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+  padding: 2rem;
+  border-radius: 1.5rem; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); /* Subtle white shadow */
+  backdrop-filter: blur(8px); /* Frosted glass effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; /* Smooth transitions for hover */
+  min-height: 350px; /* Ensures consistent card height on larger screens */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distributes content vertically */
+
+  /* Framer Motion will handle initial opacity and transform,
+     but keeping the animation here for fallback or if you want it
+     to run outside of Framer Motion's control for some reason.
+     Framer Motion's 'visible' state already sets opacity and transform. */
+  /* animation: fadeInUp 0.8s ease forwards; */
+  /* opacity: 0; */
+}
+
+.card:hover {
+  transform: translateY(-10px); /* Lifts the card on hover */
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.25); /* Enhanced shadow on hover */
+  background: rgba(255, 255, 255, 0.15); /* Slightly less transparent on hover */
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: white; /* White text for headings */
+  min-height: 100px; /* Ensures consistent heading height */
+}
+
+.card p {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8); /* Slightly transparent white text for paragraphs */
+  flex-grow: 1; /* Allows paragraph to take up available space */
+  min-height: 150px; /* Ensures consistent paragraph area height */
+}
+
+/* Fade-in Keyframes (Used by Framer Motion's transition if needed, or standalone) */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================================= */
+/* 🔽 Mobile Responsive Styles 🔽             */
+/* ========================================================= */
+
+/* General mobile adjustments for screens up to 768px wide */
+@media (max-width: 768px) {
+  .cards-section {
+    padding: 0 1rem 2rem; /* Reduce padding on sides for mobile */
+    /* Adjust margin-top for mobile. It's crucial for layout stability. */
+    margin-top: -37rem;
+  }
+
+  .cards-heading {
+    font-size: 1.8rem; /* Smaller heading on mobile */
+    margin-bottom: 1rem;
+  }
+
+  .cards-container {
+    /* For most phones (portrait and landscape) and smaller tablets:
+       Two columns, each at least 150px wide. */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem; /* Smaller gap between cards on mobile */
+  }
+
+  .card {
+    padding: 1.5rem; /* Reduce card padding on mobile */
+    min-height: auto; /* Allow card height to adjust based on content */
+  }
+
+  .card h3 {
+    font-size: 0.65rem; /* Smaller heading font on mobile */
+    min-height: auto; /* Allow heading height to adjust */
+  }
+
+  .card p {
+    font-size: 0.55rem; /* Slightly smaller paragraph font on mobile */
+    min-height: auto; /* Allow paragraph height to adjust */
+  }
+}
+
+/* Specific adjustment for very small mobile screens (e.g., iPhone 5/SE, older Androids) */
+/* If 2 columns are too cramped, revert to a single column */
+@media (max-width: 480px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 10px;
+  }
+  .cards-section {
+    padding: 0 1rem 2rem;
+    margin-top: -10rem;
+  }
+  .card h3 {
+    font-size: 0.7rem;
+    min-height: auto;
+  }
+  .card p {
+    font-size: 0.6rem;
+    min-height: auto;
+  }
+}

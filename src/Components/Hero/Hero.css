@@ -1,0 +1,68 @@
+/* ========= DESKTOP + DEFAULT STYLES ========= */
+.Hero {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 1vh;
+  min-height: 100vh;
+  color: white;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+  background: transparent; /* Or set your background image/color */
+}
+
+.hero-text {
+  max-width: 800px;
+  margin-top: 100px;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 1.2;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero-text p {
+  font-size: 1.25rem;
+  margin-top: 1rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+}
+
+/* ========= RESPONSIVE: TABLET & SMALL LAPTOP ========= */
+@media (max-width: 768px) {
+  .hero-text {
+    margin-top: 60px;
+    padding: 0 10px;
+  }
+
+  .hero-text h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-text p {
+    font-size: 1.05rem;
+  }
+}
+
+/* ========= RESPONSIVE: MOBILE PHONES ========= */
+@media (max-width: 480px) {
+  .Hero {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 12vh;
+  }
+  .hero-text {
+    margin-top: 20px;
+    padding: 0 0px;
+  }
+  .hero-text h1 {
+    font-size: 1rem;
+  }
+  .hero-text p {
+    font-size: 0.9rem;
+  }
+}
