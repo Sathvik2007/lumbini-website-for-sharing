@@ -8,7 +8,7 @@ import gatesLogo from '../../assets/gateslogo.png';
 import member1 from '../../assets/yeshrajmaganti.jpg';
 import member2 from '../../assets/krishnaprabhumaganti.jpg';
 import member3 from '../../assets/ravikumarlanke.png';
-import member4 from '../../assets/jagadeeshpilli.jpg';
+import member4 from '../../assets/jagadeeshpilli1.jpeg';
 
 
 const About = () => {

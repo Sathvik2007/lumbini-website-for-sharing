@@ -7,12 +7,18 @@
   font-family: "Orbitron", sans-serif;
 }
 
+html, body {
+  background-color: #000; /* Prevent white flash on mobile paint */
+  overscroll-behavior: none; /* Avoid overscroll glow */
+}
+
 body {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
               url('assets/ltw.jpg') no-repeat center center fixed;
   background-size: cover;
   min-height: 100vh;
   color: rgb(4, 4, 4);
+  overflow-x: hidden; /* Prevent sideways scroll causing white edges */
 }
 
 a {
@@ -25,5 +31,13 @@ a {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
                 url('assets/ltw.portrait.jpg') no-repeat center center fixed;
     background-size: cover;
+    background-attachment: scroll; /* iOS Safari: avoid fixed to prevent flicker */
+  }
+}
+
+/* Fallback for other small screens (landscape or small tablets) */
+@media (max-width: 1024px) {
+  body {
+    background-attachment: scroll; /* Ensure no fixed backgrounds on mobile */
   }
 }

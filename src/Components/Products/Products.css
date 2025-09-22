@@ -548,6 +548,61 @@
 /* ======================
    RESPONSIVE DESIGN
    ====================== */
+
+/* ======================
+   TABLET STYLES (769px - 1024px)
+   ====================== */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .products-container {
+    padding-top: 70px;
+  }
+
+  .products-hero {
+    padding: 60px 20px 40px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    padding: 30px 20px;
+  }
+
+  .product-content {
+    padding: 25px;
+  }
+
+  .product-content h3 {
+    font-size: 1.3rem;
+  }
+
+  .product-content p {
+    font-size: 0.95rem;
+  }
+
+  .modal-content {
+    max-width: 700px;
+  }
+
+  .modal-header {
+    padding: 25px 25px 20px;
+  }
+
+  .modal-body {
+    padding: 20px 25px 25px;
+  }
+}
+
+/* ======================
+   MOBILE STYLES (up to 768px)
+   ====================== */
 @media (max-width: 768px) {
   .products-container {
     padding-top: 60px;

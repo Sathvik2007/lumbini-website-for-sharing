@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { ChevronDown } from 'lucide-react';
 import './Navbar.css';
 
 const Navbar = () => {
   const location = useLocation();
   const [isSticky, setIsSticky] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
 
   // Toggle sticky navbar on scroll
   const handleScroll = () => {
@@ -29,6 +31,7 @@ const Navbar = () => {
   // Close menu when route changes
   useEffect(() => {
     closeMenu();
+    setAboutDropdownOpen(false);
   }, [location]);
 
   // Handle scroll event for sticky navbar
@@ -52,9 +55,24 @@ const Navbar = () => {
 
       <nav className={`navbar ${menuOpen ? 'show' : ''}`}>
         <Link to="/" className={location.pathname === '/' ? 'active' : ''} onClick={closeMenu}>Home</Link>
-        <Link to="/About" className={location.pathname === '/About' ? 'active' : ''} onClick={closeMenu}>About Us</Link>
+        
+        <div className="dropdown-container">
+          <button 
+            className={`dropdown-trigger ${location.pathname === '/About' || location.pathname === '/Gallery' ? 'active' : ''}`}
+            onClick={() => setAboutDropdownOpen(!aboutDropdownOpen)}
+          >
+            About Us
+            <ChevronDown className={`dropdown-icon ${aboutDropdownOpen ? 'open' : ''}`} />
+          </button>
+          <div className={`dropdown-menu ${aboutDropdownOpen ? 'show' : ''}`}>
+            <Link to="/About" onClick={closeMenu}>About Us</Link>
+            <Link to="/Gallery" onClick={closeMenu}>Gallery</Link>
+          </div>
+        </div>
+        
         <Link to="/ServicePage" className={location.pathname === '/ServicePage' ? 'active' : ''} onClick={closeMenu}>Services</Link>
         <Link to="/Products" className={location.pathname === '/Products' ? 'active' : ''} onClick={closeMenu}>Products</Link>
+        <Link to="/Career" className={location.pathname === '/Career' ? 'active' : ''} onClick={closeMenu}>Career</Link>
         <Link to="/Contact" className={location.pathname === '/Contact' ? 'active' : ''} onClick={closeMenu}>Contact</Link>
         <Link to="/Login" className={location.pathname === '/Login' ? 'active' : ''} onClick={closeMenu}>Login</Link>
       </nav>
